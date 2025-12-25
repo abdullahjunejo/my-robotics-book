@@ -1,0 +1,352 @@
+{
+  "spec_version": "1.0.0",
+  "textbook": {
+    "title": "Humanoid Robotics: Principles, Design, and Implementation",
+    "domain": "robotics",
+    "subdomain": "humanoid_systems",
+    "target_audience": ["undergraduate", "graduate", "practitioners"],
+    "prerequisites": ["linear_algebra", "calculus", "physics", "programming"],
+    "learning_objectives": [
+      "Understand the fundamental principles of humanoid robot design and locomotion",
+      "Master kinematics and dynamics of multi-body articulated systems",
+      "Design and implement balance and gait control algorithms",
+      "Analyze human-robot interaction paradigms and social robotics",
+      "Apply machine learning techniques to humanoid robot control"
+    ]
+  },
+  "architecture": {
+    "type": "modular_hierarchical",
+    "layers": [
+      {
+        "name": "foundational",
+        "modules": ["mathematics", "mechanics", "control_theory"],
+        "depth": "comprehensive"
+      },
+      {
+        "name": "systems",
+        "modules": ["kinematics", "dynamics", "actuators", "sensors"],
+        "depth": "detailed"
+      },
+      {
+        "name": "integration",
+        "modules": ["locomotion", "manipulation", "perception", "cognition"],
+        "depth": "applied"
+      },
+      {
+        "name": "advanced",
+        "modules": ["learning", "hri", "ethics", "future_directions"],
+        "depth": "exploratory"
+      }
+    ],
+    "cross_cutting_concerns": [
+      "simulation_environments",
+      "real_world_constraints",
+      "safety_considerations",
+      "computational_efficiency"
+    ]
+  },
+  "memory_patterns": {
+    "student_model": {
+      "knowledge_state": {
+        "concepts_mastered": [],
+        "concepts_in_progress": [],
+        "misconceptions": [],
+        "learning_velocity": "adaptive"
+      },
+      "interaction_history": {
+        "questions_asked": [],
+        "examples_requested": [],
+        "difficulty_preferences": "adaptive",
+        "modality_preferences": []
+      },
+      "progress_tracking": {
+        "chapters_completed": [],
+        "exercises_attempted": [],
+        "projects_completed": [],
+        "assessment_scores": {}
+      }
+    },
+    "context_management": {
+      "active_chapter": null,
+      "referenced_concepts": [],
+      "forward_references": [],
+      "backward_references": [],
+      "interdisciplinary_connections": []
+    },
+    "pedagogical_state": {
+      "current_teaching_strategy": "scaffolded",
+      "abstraction_level": "adaptive",
+      "example_complexity": "progressive",
+      "intervention_triggers": {
+        "struggling": "provide_hints",
+        "advanced": "offer_extensions",
+        "confused": "reteach_prerequisite"
+      }
+    }
+  },
+  "architecture_history": {
+    "version": "1.0.0",
+    "evolution": [
+      {
+        "version": "0.1.0",
+        "date": "2024-01-15",
+        "changes": ["Initial structure with 8 core chapters"],
+        "rationale": "Establish foundational organization"
+      },
+      {
+        "version": "0.5.0",
+        "date": "2024-06-20",
+        "changes": [
+          "Added machine learning integration chapter",
+          "Expanded HRI section",
+          "Introduced simulation-first pedagogy"
+        ],
+        "rationale": "Reflect modern humanoid robotics emphasis on learning-based approaches"
+      },
+      {
+        "version": "1.0.0",
+        "date": "2024-12-24",
+        "changes": [
+          "Integrated AI-native interactive elements",
+          "Added memory patterns for personalization",
+          "Implemented progressive complexity scaling"
+        ],
+        "rationale": "Enable adaptive, personalized learning experiences"
+      }
+    ],
+    "design_decisions": [
+      {
+        "decision": "Simulation-before-hardware approach",
+        "alternatives": ["Hardware-first", "Parallel simulation-hardware"],
+        "chosen": "Simulation-before-hardware",
+        "reasoning": "Lower barrier to entry, safer learning environment, cost-effective",
+        "trade_offs": "May miss some physical intuition initially"
+      },
+      {
+        "decision": "Math-intensive vs application-first",
+        "alternatives": ["Pure theory", "Pure application", "Balanced"],
+        "chosen": "Balanced",
+        "reasoning": "Build rigorous foundations while maintaining engagement",
+        "trade_offs": "May be challenging for some students"
+      },
+      {
+        "decision": "Programming language selection",
+        "alternatives": ["Python", "C++", "MATLAB", "Multiple"],
+        "chosen": "Python-primary with C++ for performance",
+        "reasoning": "Python for accessibility, C++ for real-time control",
+        "trade_offs": "Students must learn two languages"
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "Introduction to Humanoid Robotics",
+      "learning_outcomes": [
+        "Define humanoid robots and their distinguishing characteristics",
+        "Trace the historical evolution of humanoid robotics",
+        "Identify key application domains and societal impacts"
+      ],
+      "concepts": [
+        "humanoid_definition",
+        "degrees_of_freedom",
+        "anthropomorphism",
+        "uncanny_valley"
+      ],
+      "prerequisites": [],
+      "estimated_hours": 4
+    },
+    {
+      "id": "ch02",
+      "title": "Mathematical Foundations",
+      "learning_outcomes": [
+        "Apply rotation matrices and quaternions to represent orientations",
+        "Use homogeneous transformations for spatial relationships",
+        "Perform coordinate frame transformations"
+      ],
+      "concepts": [
+        "rotation_matrices",
+        "euler_angles",
+        "quaternions",
+        "homogeneous_transforms",
+        "twist_coordinates"
+      ],
+      "prerequisites": ["linear_algebra", "calculus"],
+      "estimated_hours": 12
+    },
+    {
+      "id": "ch03",
+      "title": "Kinematics of Humanoid Robots",
+      "learning_outcomes": [
+        "Derive forward kinematics using DH parameters",
+        "Compute inverse kinematics for humanoid limbs",
+        "Analyze workspace and singularities"
+      ],
+      "concepts": [
+        "forward_kinematics",
+        "denavit_hartenberg",
+        "inverse_kinematics",
+        "jacobian",
+        "workspace_analysis"
+      ],
+      "prerequisites": ["ch02"],
+      "estimated_hours": 16
+    },
+    {
+      "id": "ch04",
+      "title": "Dynamics and Control",
+      "learning_outcomes": [
+        "Apply Newton-Euler and Lagrangian formulations",
+        "Design PID controllers for joint control",
+        "Implement whole-body control strategies"
+      ],
+      "concepts": [
+        "equations_of_motion",
+        "lagrangian_dynamics",
+        "pid_control",
+        "computed_torque_control",
+        "impedance_control"
+      ],
+      "prerequisites": ["ch03", "control_theory"],
+      "estimated_hours": 20
+    },
+    {
+      "id": "ch05",
+      "title": "Bipedal Locomotion",
+      "learning_outcomes": [
+        "Analyze static and dynamic walking gaits",
+        "Implement zero moment point (ZMP) control",
+        "Design trajectory generators for stable walking"
+      ],
+      "concepts": [
+        "gait_patterns",
+        "zero_moment_point",
+        "inverted_pendulum",
+        "footstep_planning",
+        "balance_control"
+      ],
+      "prerequisites": ["ch04"],
+      "estimated_hours": 18
+    },
+    {
+      "id": "ch06",
+      "title": "Perception and Sensing",
+      "learning_outcomes": [
+        "Integrate IMUs, force sensors, and cameras",
+        "Process visual information for robot control",
+        "Implement sensor fusion techniques"
+      ],
+      "concepts": [
+        "imu_processing",
+        "force_torque_sensing",
+        "computer_vision",
+        "sensor_fusion",
+        "state_estimation"
+      ],
+      "prerequisites": ["ch03"],
+      "estimated_hours": 14
+    },
+    {
+      "id": "ch07",
+      "title": "Machine Learning for Humanoid Control",
+      "learning_outcomes": [
+        "Apply reinforcement learning to locomotion",
+        "Use imitation learning from human demonstrations",
+        "Implement neural network policies for control"
+      ],
+      "concepts": [
+        "reinforcement_learning",
+        "policy_gradient",
+        "imitation_learning",
+        "sim_to_real_transfer",
+        "neural_control"
+      ],
+      "prerequisites": ["ch05", "ch06"],
+      "estimated_hours": 16
+    },
+    {
+      "id": "ch08",
+      "title": "Human-Robot Interaction",
+      "learning_outcomes": [
+        "Design intuitive interaction interfaces",
+        "Implement social behavior primitives",
+        "Address safety and ethical considerations"
+      ],
+      "concepts": [
+        "social_robotics",
+        "gesture_recognition",
+        "speech_interaction",
+        "safety_standards",
+        "ethical_design"
+      ],
+      "prerequisites": ["ch06"],
+      "estimated_hours": 12
+    }
+  ],
+  "interaction_patterns": {
+    "questioning": {
+      "socratic_dialogue": true,
+      "hint_progression": ["conceptual", "mathematical", "implementation"],
+      "question_types": ["comprehension", "application", "analysis", "synthesis"]
+    },
+    "examples": {
+      "generation_strategy": "progressive_complexity",
+      "domains": ["toy_problems", "realistic_scenarios", "research_frontiers"],
+      "modalities": ["analytical", "numerical", "simulation", "physical"]
+    },
+    "feedback": {
+      "timing": "immediate_for_errors_delayed_for_exploration",
+      "specificity": "adaptive_to_student_level",
+      "encouragement": "growth_mindset_oriented"
+    }
+  },
+  "assessment_framework": {
+    "formative": {
+      "concept_checks": "embedded_in_chapters",
+      "coding_exercises": "auto_graded_with_feedback",
+      "simulation_tasks": "performance_based"
+    },
+    "summative": {
+      "problem_sets": "weekly",
+      "midterm_project": "gait_controller_implementation",
+      "final_project": "complete_humanoid_behavior"
+    },
+    "mastery_criteria": {
+      "concepts": 0.80,
+      "applications": 0.75,
+      "projects": 0.85
+    }
+  },
+  "ai_capabilities": {
+    "adaptive_content": [
+      "difficulty_scaling",
+      "prerequisite_remediation",
+      "advanced_extensions",
+      "alternative_explanations"
+    ],
+    "interactive_elements": [
+      "simulation_generation",
+      "visualization_creation",
+      "code_debugging_assistance",
+      "concept_clarification"
+    ],
+    "personalization": [
+      "learning_path_optimization",
+      "interest_based_examples",
+      "pace_adaptation",
+      "modality_preference"
+    ]
+  },
+  "technical_infrastructure": {
+    "simulation_platforms": ["PyBullet", "MuJoCo", "Gazebo"],
+    "programming_languages": ["Python", "C++"],
+    "libraries": ["NumPy", "SciPy", "ROS2", "PyTorch"],
+    "hardware_options": ["NAO", "Darwin-OP", "custom_platforms"]
+  },
+  "metadata": {
+    "created": "2024-12-24",
+    "authors": ["AI Textbook Generation System"],
+    "license": "CC-BY-SA-4.0",
+    "version": "1.0.0"
+  }
+}

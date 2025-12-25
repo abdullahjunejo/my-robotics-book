@@ -7,14 +7,14 @@ const config: Config = {
   tagline: 'Synthesizing Motion and Intelligence for the Next Generation of Robots 🦾',
   favicon: 'img/favicon.ico',
 
-  // ✅ Important for localized routing
-  url: 'http://localhost:3000', 
-  baseUrl: '/',
-  trailingSlash: false, // Is se URL paths zyada predictable ho jatay hain
+  // ✅ GitHub Pages ke liye update (In 4 lines ko tawajjo se dekhein)
+  url: 'https://abdullahjunejo.github.io', 
+  baseUrl: '/my-robotics-book/', 
+  organizationName: 'abdullahjunejo', 
+  projectName: 'my-robotics-book',
   
-  organizationName: 'your-username', 
-  projectName: 'neural-dynamics-portal',
-  onBrokenLinks: 'warn', // 'throw' ki wajah se server bar bar ruk jata hai
+  trailingSlash: false,
+  onBrokenLinks: 'warn', 
   onBrokenMarkdownLinks: 'warn',
 
   future: {
@@ -43,14 +43,13 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // ✅ Path lazmi define karein
           path: 'docs',
           routeBasePath: 'docs',
           editUrl: ({locale, docPath}) => {
             if (locale === 'en') {
-              return `https://github.com/your-repo/edit/main/docs/${docPath}`;
+              return `https://github.com/abdullahjunejo/my-robotics-book/edit/main/docs/${docPath}`;
             }
-            return `https://github.com/your-repo/edit/main/i18n/ur/docusaurus-plugin-content-docs/current/${docPath}`;
+            return `https://github.com/abdullahjunejo/my-robotics-book/edit/main/i18n/ur/docusaurus-plugin-content-docs/current/${docPath}`;
           },
         },
         theme: {
@@ -78,20 +77,16 @@ const config: Config = {
           position: 'left',
           label: 'Textbook',
         },
-        
-        // ✅ Official Locale Dropdown
         {
           type: 'localeDropdown',
           position: 'right',
         },
-
         {
           to: '/signup',
           label: 'Sign Up',
           position: 'right',
           className: 'signup-ani',
         },
-        
         {
           type: 'html',
           position: 'right',

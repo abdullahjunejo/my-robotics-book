@@ -1,0 +1,82 @@
+.chatbotContainer { position: fixed; bottom: 25px; right: 25px; z-index: 10000; }
+
+.floatingButton {
+  width: 60px; height: 60px; border-radius: 50%;
+  background-color: #1e8e6e !important; color: white !important;
+  border: 2px solid white; font-size: 24px; cursor: pointer;
+}
+
+.chatWindow {
+  position: absolute; bottom: 80px; right: 0;
+  width: 360px; height: 500px !important;
+  background-color: #1b1b1d !important;
+  border: 1px solid #1e8e6e; border-radius: 15px;
+  display: flex !important; flex-direction: column !important;
+  overflow: hidden !important; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.chatHeader {
+  background-color: #1e8e6e !important; color: white !important;
+  padding: 15px; text-align: center; font-weight: bold;
+}
+
+/* ✅ SCROLL FIX: Isay change mat kariyega */
+.messagesArea {
+  flex: 1 !important;
+  overflow-y: auto !important; /* Force scroll */
+  display: flex !important; flex-direction: column !important;
+  padding: 15px !important; background-color: #141415 !important;
+  gap: 12px;
+}
+
+.messagesArea::-webkit-scrollbar { width: 6px; }
+.messagesArea::-webkit-scrollbar-thumb { background: #1e8e6e; border-radius: 10px; }
+
+.userRow { justify-content: flex-end; display: flex; }
+.aiRow { justify-content: flex-start; display: flex; }
+
+.userBubble { background: #1e8e6e; color: white; padding: 10px; border-radius: 10px 10px 0 10px; max-width: 80%; }
+.aiBubble { background: #2d2d30; color: white !important; padding: 10px; border-radius: 10px 10px 10px 0; max-width: 85%; }
+
+.inputArea { padding: 10px; background: #1b1b1d; display: flex; gap: 5px; border-top: 1px solid #333; }
+.msgInput { flex: 1; background: #242526; color: white; border: 1px solid #444; padding: 8px; border-radius: 5px; }
+.sendBtn { background: #1e8e6e; color: white; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; }
+.loginForm { padding: 40px 20px; text-align: center; color: white; }
+
+/* ✅ SENDER LABELS STYLE */
+.senderLabel {
+  font-size: 10px !important;
+  color: #25c2a0 !important; /* Brand green color */
+  margin-bottom: 4px;
+  display: block;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+/* Row alignment ko adjust kiya taake labels bhi sath move hon */
+.userRow { 
+  display: flex !important; 
+  flex-direction: column !important; 
+  align-items: flex-end !important; /* User label right side par */
+  margin-bottom: 10px;
+}
+
+.aiRow { 
+  display: flex !important; 
+  flex-direction: column !important; 
+  align-items: flex-start !important; /* AI label left side par */
+  margin-bottom: 10px;
+}
+
+/* User aur AI bubbles ki width thodi manage ki */
+.userBubble { 
+  background: #1e8e6e; color: white; padding: 10px; 
+  border-radius: 12px 12px 0 12px !important; 
+  max-width: 85%; 
+}
+
+.aiBubble { 
+  background: #2d2d30; color: white !important; padding: 10px; 
+  border-radius: 12px 12px 12px 0 !important; 
+  max-width: 90%; 
+}

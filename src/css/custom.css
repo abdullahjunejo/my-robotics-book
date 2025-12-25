@@ -1,96 +1,56 @@
-/* 1. Logo & Brand Name (Adaptive Gradient) */
-.navbar__brand {
-  transition: all 0.3s ease;
-  padding: 5px 12px;
-  border-radius: 12px;
+/* --- CHATBOT RESPONSIVE FIX (Sirf ye hissa add/update karein) --- */
+
+/* Chatbot ki main window */
+.chatbot-window {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  width: 400px; /* Laptop par size perfect rahay ga */
+  max-height: 500px;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
-.navbar__brand:hover {
-  background: rgba(30, 142, 110, 0.1);
-  transform: scale(1.05);
+/* 📱 Mobile Screens ke liye Special Settings */
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 90vw;    /* Mobile screen ki width ka 90% */
+    right: 5vw;     /* Dono sides se barabar gap */
+    left: 5vw;
+    bottom: 80px;
+    max-height: 65vh; /* Screen ki total height ka 65% */
+  }
+
+  .chatbot-header {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .chatbot-messages {
+    height: 300px; /* Message area ko mobile par fit karna */
+  }
 }
 
-.navbar__title {
-  font-weight: 800 !important;
-  letter-spacing: -0.5px;
-  /* ✨ Light Mode mein thora dark green gradient aur Dark mode mein neon */
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, #25c2a0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: var(--ifm-color-primary); /* Fallback for older browsers */
-}
-
-/* 2. Textbook Link (Adaptive Capsule) */
-.navbar__item.navbar__link[href*="docs"] {
-  font-weight: 700;
-  margin: 0 5px;
-  padding: 6px 15px !important;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  /* ✨ Theme ke mutabiq text color badlay ga */
-  color: var(--ifm-color-content) !important; 
-}
-
-.navbar__item.navbar__link[href*="docs"]:hover {
-  background: rgba(30, 142, 110, 0.15);
-  color: var(--ifm-color-primary) !important;
-}
-
-/* 3. Language Switcher (EN | UR) - Your Circle Area */
-.lang-switcher-wrapper {
-  /* ✨ Light mode mein light gray background aur dark mein dark glassy */
-  background: rgba(var(--ifm-color-emphasis-100-rgb), 0.05) !important;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(30, 142, 110, 0.4) !important;
-  padding: 5px 15px !important;
-  border-radius: 25px !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.lang-node {
-  /* ✨ Text hamesha visible rahay ga */
-  color: var(--ifm-color-content) !important;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.lang-node.active {
-  color: var(--ifm-color-primary) !important;
-  font-weight: 900;
-  text-decoration: underline wavy var(--ifm-color-primary) 2px !important;
-  text-underline-offset: 4px;
-}
-
-/* 4. Sign Up Button (Fixed Premium Glow) */
-.signup-ani {
-  background: linear-gradient(135deg, #1e8e6e 0%, #25c2a0 100%) !important;
-  /* ✨ Iska color hamesha white rahay ga kyunki background dark green hai */
-  color: #ffffff !important; 
-  border: none !important;
-  padding: 8px 20px !important;
-  border-radius: 25px !important;
-  font-weight: 800 !important;
+/* Chatbot ka icon button */
+.chatbot-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e8e6e 0%, #25c2a0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
   box-shadow: 0 4px 15px rgba(30, 142, 110, 0.4);
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-}
-
-.signup-ani:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(37, 194, 160, 0.6);
-}
-
-/* 5. GitHub Link Icon Fix */
-.navbar__item.navbar__link[href*="github"] {
-  color: var(--ifm-color-content) !important;
-  opacity: 0.8;
-  transition: 0.3s;
-}
-
-.navbar__item.navbar__link[href*="github"]:hover {
-  opacity: 1;
-  transform: rotate(10deg);
-  color: var(--ifm-color-primary) !important;
 }

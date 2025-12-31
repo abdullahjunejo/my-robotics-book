@@ -11,7 +11,7 @@ from groq import Groq  # ✅ Groq Import kiya
 app = FastAPI()
 
 # ✅ Groq Client Setup (Aapki Free Key yahan laga di hai)
-groq_client = Groq(api_key="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")
+groq_client = Groq(api_key="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")
 
 app.add_middleware(
     CORSMiddleware,
